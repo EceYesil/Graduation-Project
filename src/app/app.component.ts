@@ -7,7 +7,7 @@ import { SurveyFormComponent } from './survey-form/survey-form.component';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
   standalone: true,
-  imports: [SurveyFormComponent] // Import SurveyFormComponent here
+  imports: [SurveyFormComponent]
 })
 export class AppComponent {
   title = 'survey-app';

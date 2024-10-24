@@ -16,7 +16,8 @@ interface Question {
   styleUrls: ['./survey-form.component.css'],
   standalone: true,
   imports: [CommonModule, FormsModule]
-})
+}) 
+
 export class SurveyFormComponent {
   questionType: string = 'open-ended';
   questions: Question[] = [];
