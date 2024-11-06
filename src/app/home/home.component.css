@@ -1,34 +1,54 @@
-/* home.component.css */
 .home-container {
-    display: flex;
-  }
-  
-  .sidebar {
-    width: 200px;
-    background-color: #f8f9fa;
-    padding: 15px;
-  }
-  
-  .sidebar ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .sidebar li {
-    margin-bottom: 10px;
-  }
-  
-  .sidebar a {
-    text-decoration: none;
-    color: #007bff;
-  }
-  
-  .sidebar a:hover {
-    text-decoration: underline;
-  }
-  
-  .content {
-    flex: 1;
-    padding: 20px;
-  }
-  
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar {
+  background-color: #333;
+  color: white;
+  padding: 1rem;
+  display: flex;
+  justify-content: flex-end; /* Align items to the right */
+}
+
+.navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.navbar li {
+  margin-left: 1rem; /* Add space between buttons */
+}
+
+.navbar button {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.navbar button:hover {
+  text-decoration: underline;
+}
+
+.breadcrumb-container {
+  padding: 1rem;
+  background-color: #f8f9fa;
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+}
+
+.breadcrumb a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+.breadcrumb span {
+  margin-left: 0.5rem;
+}

@@ -1,10 +1,16 @@
 <div class="home-container">
-  <nav class="sidebar">
+  <nav class="navbar">
     <ul>
+      <li><button routerLink="/">Home</button></li>
       <li><button routerLink="add-survey">Add Survey</button></li>
       <li><button routerLink="survey">Survey</button></li>
     </ul>
   </nav>
+  <div class="breadcrumb-container" *ngIf="breadcrumb">
+    <nav class="breadcrumb">
+      <a routerLink="/">Home</a> / <span>{{ breadcrumb }}</span>
+    </nav>
+  </div>
   <div class="content">
     <div *ngIf="showWelcomeMessage">
       <h1>Welcome to the Survey Application</h1>
