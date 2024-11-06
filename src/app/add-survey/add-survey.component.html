@@ -1,0 +1,85 @@
+<div class="container">
+    <h2>Survey Form</h2>
+    <form (ngSubmit)="onSubmit()" #surveyForm="ngForm">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" ngModel required class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" ngModel required class="form-control">
+      </div>
+  
+      <div class="form-group">
+        <label>Gender:</label>
+        <div class="radio-group">
+          <label>
+            <input type="radio" name="gender" value="male" ngModel>
+            Male
+          </label>
+          <label>
+            <input type="radio" name="gender" value="female" ngModel>
+            Female
+          </label>
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="age">Age Group:</label>
+        <select id="age" name="age" ngModel class="form-control">
+          <option value="under_18">Under 18</option>
+          <option value="18-24">18-24</option>
+          <option value="25-34">25-34</option>
+          <option value="35-44">35-44</option>
+          <option value="45_plus">45+</option>
+        </select>
+      </div>
+  
+      <div class="form-group">
+        <label for="question-type">Question Type:</label>
+        <select id="question-type" [(ngModel)]="questionType" name="question_type" class="form-control" required>
+          <option value="" disabled selected>Select Question Type</option>
+          <option value="open-ended">Open-ended</option>
+          <option value="multiple-choice">Multiple Choice</option>
+          <option value="single-choice">Single Choice</option>
+        </select>
+        <small id="questionHelp" class="form-text text-muted">Please choose the type of question.</small>
+      </div>
+  
+      <div class="form-group" id="additional-questions">
+        <ng-container *ngFor="let question of questions; let i = index">
+          <div class="form-group" [ngSwitch]="questionType">
+            <label>Question Text:</label>
+            <input type="text" [(ngModel)]="question.text" name="questionText{{i}}" class="form-control" placeholder="Type your question here" required>
+            <small id="questionHelp" class="form-text text-muted" *ngSwitchCase="'open-ended'">You can provide a detailed answer.</small>
+            <small id="questionHelp" class="form-text text-muted" *ngSwitchCase="'multiple-choice'">You can choose more than one option.</small>
+            <small id="questionHelp" class="form-text text-muted" *ngSwitchCase="'single-choice'">You can choose only one option.</small>
+  
+            <div *ngSwitchCase="'open-ended'">
+              <label>Answer:</label>
+              <textarea [(ngModel)]="question.answer" name="questionAnswer{{i}}" class="form-control" rows="3" placeholder="Type your answer here" required></textarea>
+            </div>
+  
+            <div *ngSwitchCase="'multiple-choice'">
+              <label>Options:</label>
+              <div *ngFor="let option of question.options; let j = index" class="option-group">
+                <input type="checkbox" [(ngModel)]="option.checked" name="optionChecked{{i}}_{{j}}">
+                <input type="text" [(ngModel)]="option.text" name="optionText{{i}}_{{j}}" class="form-control" placeholder="Type option {{j + 1}}" required>
+              </div>
+            </div>
+  
+            <div *ngSwitchCase="'single-choice'">
+              <label>Options:</label>
+              <div *ngFor="let option of question.options; let j = index" class="option-group">
+                <input type="radio" [(ngModel)]="question.selected" [value]="option.text" name="questionSelected{{i}}">
+                <input type="text" [(ngModel)]="option.text" name="optionText{{i}}_{{j}}" class="form-control" placeholder="Type option {{j + 1}}" required>
+              </div>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+  
+      <button type="button" class="add-question btn btn-primary" (click)="addQuestion()">Add Question</button>
+      <button type="submit" class="btn btn-success">Submit Survey</button>
+    </form>
+  </div>

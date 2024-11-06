@@ -1,0 +1,16 @@
+.form-group {
+    margin-bottom: 20px; /* Adds space between questions */
+}
+ 
+/* In your component's CSS file */
+select#question-type option[value="open-ended"] {
+    color: blue;
+  }
+  
+  select#question-type option[value="multiple-choice"] {
+    color: blue;
+  }
+  
+  select#question-type option[value="single-choice"] {
+    color: blue;
+  }

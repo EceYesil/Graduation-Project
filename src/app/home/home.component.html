@@ -1,0 +1,15 @@
+<div class="home-container">
+  <nav class="sidebar">
+    <ul>
+      <li><button routerLink="add-survey">Add Survey</button></li>
+      <li><button routerLink="survey">Survey</button></li>
+    </ul>
+  </nav>
+  <div class="content">
+    <div *ngIf="showWelcomeMessage">
+      <h1>Welcome to the Survey Application</h1>
+      <p>Select an option from the sidebar to get started.</p>
+    </div>
+    <router-outlet></router-outlet>
+  </div>
+</div>

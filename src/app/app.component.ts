@@ -1,13 +1,13 @@
 // app.component.ts
 import { Component } from '@angular/core';
-import { SurveyFormComponent } from './survey-form/survey-form.component';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
   standalone: true,
-  imports: [SurveyFormComponent]
+  imports: [RouterModule] // Only import RouterModule here without forRoot()
 })
 export class AppComponent {
   title = 'survey-app';
