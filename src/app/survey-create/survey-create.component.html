@@ -1,0 +1,42 @@
+<div class="container">
+  <h2>Survey Form</h2>
+  <form (ngSubmit)="onSubmit()" #surveyForm="ngForm">
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" ngModel required class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" ngModel required class="form-control">
+    </div>
+
+    <div class="form-group">
+      <label for="questionType">Question Type:</label>
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+          Soru Tipini Seçin
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <li><a class="dropdown-item" href="#" (click)="onOptionChange($event, 'Single Choice')">Single Choice</a></li>
+          <li><a class="dropdown-item" href="#" (click)="onOptionChange($event, 'Multiple Choice')">Multiple Choice</a></li>
+          <li><a class="dropdown-item" href="#" (click)="onOptionChange($event, 'Open-ended')">Open-ended</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div *ngFor="let questionType of selectedQuestionTypes; let i = index">
+      <div *ngIf="questionType === 'Single Choice'">
+        <app-single-answer [index]="i" [remove]="removeQuestion.bind(this)"></app-single-answer>
+      </div>
+      <div *ngIf="questionType === 'Multiple Choice'">
+        <app-multiple-answer [index]="i" [remove]="removeQuestion.bind(this)"></app-multiple-answer>
+      </div>
+      <div *ngIf="questionType === 'Open-ended'">
+        <app-openended-answer [index]="i" [remove]="removeQuestion.bind(this)"></app-openended-answer>
+      </div>
+    </div>
+
+    <div #scrollTarget style="height: 1px; margin-top: 20px;"></div>
+    <button type="submit" class="btn btn-primary" (click)="onSubmit()">Submit</button>
+  </form>
+</div>

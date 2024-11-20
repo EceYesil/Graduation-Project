@@ -1,0 +1,18 @@
+<div class="form-row">
+  <div class="form-group col-md-12">
+    <div formArrayName="options">
+      <div *ngFor="let option of options.controls; let i = index" [formGroupName]="i" class="form-group" #optionContainer>
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input" formControlName="selected" id="optionSelected-{{i}}">
+          <label class="form-check-label" for="optionSelected-{{i}}">
+            <input id="optionValue-{{i}}" formControlName="label" class="form-control" placeholder="Cevabı buraya yazınız." style="font-size: 1em;" />
+          </label>
+        </div>
+      </div>
+    </div>
+    <button type="button" class="btn btn-danger" (click)="deleteQuestion()">Soru Sil</button>
+    <button type="button" class="btn btn-warning" (click)="removeOption()">Seçeneği Sil</button>
+    <button type="button" class="btn btn-primary" (click)="addOption()">Seçenek Ekle</button>
+    <button type="button" class="btn btn-success" (click)="onSubmit()">Kaydet</button>
+  </div>
+</div>

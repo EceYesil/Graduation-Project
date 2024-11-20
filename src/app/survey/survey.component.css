@@ -1,0 +1,22 @@
+.survey-container {
+    padding: 1rem;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+  }
+  
+  .survey-question {
+    margin-bottom: 1.5rem;
+  }
+  
+  .survey-question h3 {
+    margin-bottom: 0.5rem;
+  }
+  
+  .survey-question ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .survey-question li {
+    margin-bottom: 0.5rem;
+  }

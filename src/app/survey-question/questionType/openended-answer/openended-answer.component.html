@@ -1,0 +1,50 @@
+<form [formGroup]="questionForm" (ngSubmit)="onSubmit()">
+  <!-- Question Input -->
+  <div class="form-row">
+    <div class="form-group col-md-12">
+      <label for="questionText">Soru:</label>
+      <input 
+        type="text"
+        formControlName="questionText"
+        class="form-control"
+        id="questionText"
+        placeholder="Soruyu buraya yazınız."
+        style="font-size: 1em;"
+      />
+    </div>
+  </div>
+
+  <!-- Answer Input -->
+  <div class="form-row">
+    <div class="form-group col-md-12">
+      <label for="answer">Cevap:</label>
+      <textarea 
+        formControlName="answer"
+        class="form-control"
+        id="answer"
+        placeholder="Cevabı buraya yazınız."
+        style="font-size: 1em;"
+      ></textarea>
+    </div>
+  </div>
+
+  <!-- Action Buttons -->
+  <div class="form-row">
+    <div class="form-group col-md-12">
+      <button 
+        type="button" 
+        class="btn btn-danger" 
+        (click)="deleteQuestion()">
+        Soru Sil
+      </button>
+      <button 
+        type="submit" 
+        class="btn btn-success">
+        Kaydet
+      </button>
+    </div>
+  </div>
+</form>
+
+<!-- Scroll Target -->
+<div #scrollTarget style="height: 1px; margin-top: 20px;"></div>

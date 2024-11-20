@@ -5,13 +5,13 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [RouterModule, CommonModule],
+  imports: [RouterModule,CommonModule],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
   showWelcomeMessage: boolean = true;
-  breadcrumb: string = '';
+  breadcrumb: string = 'Home';
 
   constructor(private router: Router, private route: ActivatedRoute) {
     this.router.events.subscribe(event => {

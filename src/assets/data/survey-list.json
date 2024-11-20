@@ -1,0 +1,118 @@
+{
+    "type": "SUCCESSFUL",
+    "data": [
+      {
+        "id": 1,
+        "survey_name": "Vakıfbank Kurum Sınavı",
+        "survey_date": "2023-01-28T11:45:50.120Z",
+        "start_date": "2023-01-15T11:45:50.120Z",
+        "end_date": "2023-01-16T11:45:50.120Z",
+        "status": true,
+        "periods": [
+          {
+            "id": "bk6adBv4",
+            "name": "Giriş Belgesi Dökümü",
+            "start_date": "2024-02-10T11:45:50.120Z",
+            "end_date": "2024-02-2911T11:45:50.120Z"
+          },
+          {
+            "id": "wsfe432d",
+            "name": "Sonuç Belgesi Döküm",
+            "start_date": "2024-03-23T11:45:50.120Z",
+            "end_date": "2024-02-2911T11:45:50.120Z"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "survey_name": "Halkbank Kurum Sınavı",
+        "survey_date": "2023-01-28T11:45:50.120Z",
+        "start_date": "2023-02-10T11:45:50.120Z",
+        "end_date": "2023-02-11T11:45:50.120Z",
+        "status": true,
+        "periods": [
+          {
+            "id": "bk6adBv4",
+            "name": "Giriş Belgesi Dökümü",
+            "start_date": "2024-02-10T11:45:50.120Z",
+            "end_date": "2024-02-2911T11:45:50.120Z"
+          },
+          {
+            "id": "wsfe432d",
+            "name": "Sonuç Belgesi Döküm",
+            "start_date": "2024-03-23T11:45:50.120Z",
+            "end_date": "2024-02-2911T11:45:50.120Z"
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "survey_name": "GSB Bahar Sınavı",
+        "survey_date": "2023-01-28T11:45:50.120Z",
+        "start_date": "2023-03-20T11:45:50.120Z",
+        "end_date": "2023-03-21T11:45:50.120Z",
+        "status": false,
+        "periods": [
+          {
+            "id": "bk6adBv4",
+            "name": "Giriş Belgesi Dökümü",
+            "start_date": "2024-02-10T11:45:50.120Z",
+            "end_date": "2024-02-2911T11:45:50.120Z"
+          },
+          {
+            "id": "wsfe432d",
+            "name": "Sonuç Belgesi Döküm",
+            "start_date": "2024-03-23T11:45:50.120Z",
+            "end_date": "2024-02-2911T11:45:50.120Z"
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "survey_name": "Tab Gıda Bahar Sınavı",
+        "survey_date": "2023-01-28T11:45:50.120Z",
+        "start_date": "2023-12-25T11:45:50.120Z",
+        "end_date": "2023-12-26T11:45:50.120Z",
+        "status": false,
+        "periods": [
+          {
+            "id": "bk6adBv4",
+            "name": "Giriş Belgesi Dökümü",
+            "start_date": "2024-02-10T11:45:50.120Z",
+            "end_date": "2024-02-2911T11:45:50.120Z"
+          },
+          {
+            "id": "wsfe432d",
+            "name": "Sonuç Belgesi Döküm",
+            "start_date": "2024-03-23T11:45:50.120Z",
+            "end_date": "2024-02-2911T11:45:50.120Z"
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "survey_name": "Tab Gıda Güz Dönemi Sınavı",
+        "survey_date": "2023-01-28T11:45:50.120Z",
+        "start_date": "2023-05-18T11:45:50.120Z",
+        "end_date": "2023-05-19T11:45:50.120Z",
+        "status": false,
+        "periods": [
+          {
+            "id": "bk6adBv4",
+            "name": "Giriş Belgesi Dökümü",
+            "start_date": "2024-02-10T11:45:50.120Z",
+            "end_date": "2024-02-2911T11:45:50.120Z"
+          },
+          {
+            "id": "wsfe432d",
+            "name": "Sonuç Belgesi Döküm",
+            "start_date": "2024-03-23T11:45:50.120Z",
+            "end_date": "2024-02-2911T11:45:50.120Z"
+          }
+        ]
+      }
+    ],
+    "pagination": {
+      "totalElements": 5
+    }
+  }
