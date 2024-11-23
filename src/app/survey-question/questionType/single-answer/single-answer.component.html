@@ -3,17 +3,17 @@
       <div class="form-group col-md-12">
         <!-- Question Input -->
         <div class="form-group">
-          <label for="questionText">Soru:</label>
+          <label for="questionText">Question:</label>
           <input 
             type="text" 
             id="questionText" 
             formControlName="questionText" 
             class="form-control" 
-            placeholder="Soruyu buraya yazınız." 
+            placeholder="Type the question here." 
             style="font-size: 1em;" 
           />
           <small class="form-text text-muted">
-            Bu soruda seçeneklerden sadece birini seçebilirsiniz.
+            You can choose only one answer.
           </small>
         </div>
         
@@ -34,9 +34,9 @@
               <label class="form-check-label" for="optionSelected-{{i}}">
                 <input 
                   id="optionValue-{{i}}" 
-                  formControlName="label" 
+                  formControlName="value" 
                   class="form-control" 
-                  placeholder="Cevabı buraya yazınız." 
+                  placeholder="Type the answer here." 
                   style="font-size: 1em;" 
                 />
               </label>
@@ -49,24 +49,24 @@
           type="button" 
           class="btn btn-danger" 
           (click)="deleteQuestion()">
-          Soru Sil
+          Delete Question
         </button>
         <button 
           type="button" 
           class="btn btn-warning" 
           (click)="removeOption()">
-          Seçeneği Sil
+          Delete Option
         </button>
         <button 
           type="button" 
           class="btn btn-primary" 
           (click)="addOption()">
-          Seçenek Ekle
+          Add Option
         </button>
         <button 
           type="submit" 
           class="btn btn-success">
-          Kaydet
+          Save
         </button>
       </div>
     </div>

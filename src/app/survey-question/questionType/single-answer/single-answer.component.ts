@@ -1,12 +1,14 @@
 import { Component, OnInit, AfterViewChecked, ElementRef, ViewChildren, QueryList, Input } from '@angular/core';
 import { FormBuilder, FormGroup, FormArray, FormsModule, Validators, ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @Component({
   standalone: true,
   selector: 'app-single-answer',
   imports: [
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    CommonModule
   ],
   templateUrl: 'single-answer.component.html',
 })
@@ -80,7 +82,7 @@ export class SingleAnswerQuestion implements OnInit, AfterViewChecked {
   }
 
   onOptionSelect(index: number): void {
-    // Bütün seçenekleri resetleme
+    // reset all options
     this.options.controls.forEach((control, i) => {
       control.get('selected')?.setValue(i === index);
     });

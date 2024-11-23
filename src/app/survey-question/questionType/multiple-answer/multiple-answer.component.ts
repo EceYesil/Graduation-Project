@@ -1,12 +1,14 @@
-import { Component, Input, OnInit, AfterViewChecked, ElementRef, ViewChildren, QueryList } from '@angular/core';
-import { FormBuilder, FormGroup, FormArray, Validators, ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { Component, OnInit, AfterViewChecked, ElementRef, ViewChildren, QueryList, Input } from '@angular/core';
+import { FormBuilder, FormGroup, FormArray, FormsModule, Validators, ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @Component({
   standalone: true,
   selector: 'app-multiple-answer',
   imports: [
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    CommonModule
   ],
   templateUrl: 'multiple-answer.component.html',
 })
@@ -15,6 +17,7 @@ export class MultipleQuestionComponent implements OnInit, AfterViewChecked {
   @Input() remove: (index: number) => void = () => {};
 
   @ViewChildren('optionContainer') optionContainers!: QueryList<ElementRef>;
+
   questionForm: FormGroup;
   private hasNewOption: boolean = false;
 
@@ -29,7 +32,7 @@ export class MultipleQuestionComponent implements OnInit, AfterViewChecked {
     this.addOption();
     this.addOption();
     this.addOption();
-    this.addOption(); // Başlangıçta 4 seçenek ekle 
+    this.addOption(); // Adds 4 options initially.
   }
 
   ngAfterViewChecked(): void {
@@ -45,7 +48,7 @@ export class MultipleQuestionComponent implements OnInit, AfterViewChecked {
 
   createOption(): FormGroup {
     return this.fb.group({
-      label: [''],
+      value: [''],
       selected: [false],
     });
   }
@@ -69,20 +72,19 @@ export class MultipleQuestionComponent implements OnInit, AfterViewChecked {
     }
   }
 
-  onSubmit(): void {
+  onSubmit() {
     console.log(this.questionForm.value);
   }
 
-  getSelectedOptions(): string[] {
-    return this.options.controls
-      .filter(option => option.get('selected')?.value)
-      .map(option => option.get('label')?.value);
-  }
-
-  // Soru silme buttonu 
   deleteQuestion(): void {
     if (this.remove) {
       this.remove(this.index);
     }
+  }
+
+  onOptionSelect(index: number): void {
+    this.options.controls.forEach((control, i) => {
+      control.get('selected')?.setValue(i === index);
+    });
   }
 }

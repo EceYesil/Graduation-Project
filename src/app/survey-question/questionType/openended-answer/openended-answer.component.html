@@ -2,46 +2,48 @@
   <!-- Question Input -->
   <div class="form-row">
     <div class="form-group col-md-12">
-      <label for="questionText">Soru:</label>
-      <input 
-        type="text"
-        formControlName="questionText"
-        class="form-control"
-        id="questionText"
-        placeholder="Soruyu buraya yazınız."
-        style="font-size: 1em;"
-      />
-    </div>
-  </div>
+      <div class="form-group">
+        <label for="questionText">Question:</label>
+        <input 
+          type="text" 
+          id="questionText" 
+          formControlName="questionText" 
+          class="form-control" 
+          placeholder="Type the question here." 
+          style="font-size: 1em;" 
+        />
+      </div>
 
-  <!-- Answer Input -->
-  <div class="form-row">
-    <div class="form-group col-md-12">
-      <label for="answer">Cevap:</label>
-      <textarea 
-        formControlName="answer"
-        class="form-control"
-        id="answer"
-        placeholder="Cevabı buraya yazınız."
-        style="font-size: 1em;"
-      ></textarea>
-    </div>
-  </div>
 
-  <!-- Action Buttons -->
-  <div class="form-row">
-    <div class="form-group col-md-12">
-      <button 
-        type="button" 
-        class="btn btn-danger" 
-        (click)="deleteQuestion()">
-        Soru Sil
-      </button>
-      <button 
-        type="submit" 
-        class="btn btn-success">
-        Kaydet
-      </button>
+      <div class="form-row">
+        <div class="form-group col-md-12">
+          <label for="answer">Answer:</label>
+          <textarea 
+            formControlName="answer"
+            class="form-control"
+            id="answer"
+            placeholder="Type the answer here."
+            style="font-size: 1em;"
+          ></textarea>
+        </div>
+      </div>
+    
+      <!-- Action Buttons -->
+      <div class="form-row">
+        <div class="form-group col-md-12">
+          <button 
+            type="button" 
+            class="btn btn-danger" 
+            (click)="deleteQuestion()">
+            Delete Question
+          </button>
+          <button 
+            type="submit" 
+            class="btn btn-success">
+            Save
+          </button>
+        </div>  
+      </div>    
     </div>
   </div>
 </form>
