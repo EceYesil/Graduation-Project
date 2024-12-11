@@ -12,6 +12,7 @@ import { CommonModule } from '@angular/common';
 export class HomeComponent {
   showWelcomeMessage: boolean = true;
   breadcrumb: string = 'Home';
+  isHomePage: boolean = false;
 
   constructor(private router: Router, private route: ActivatedRoute) {
     this.router.events.subscribe(event => {
@@ -19,6 +20,7 @@ export class HomeComponent {
         const currentRoute = this.route.snapshot.firstChild?.routeConfig?.path;
         this.showWelcomeMessage = currentRoute === undefined;
         this.breadcrumb = currentRoute ? this.capitalizeFirstLetter(currentRoute.replace('-', ' ')) : '';
+        this.isHomePage = event.url === '/';
       }
     });
   }

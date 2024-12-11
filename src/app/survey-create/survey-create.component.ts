@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormBuilder, FormArray, FormsModule } from '@angular/forms';
 import { DateFilterFn, MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -44,7 +44,7 @@ export class CreateSurveyComponent implements OnInit {
   errors: any = {};
   items: any[] = [];
   selectedQuestionTypes: string[] = []; // Selected question types
-  questions: Question[] = [];
+  questions: FormArray;
   scrollToLastQuestion = false;
   dateFilter: DateFilterFn<any> | undefined;
 
@@ -60,9 +60,16 @@ export class CreateSurveyComponent implements OnInit {
 
   @ViewChild('scrollTarget') scrollTarget!: ElementRef;
 
-  constructor(private router: Router, private route: ActivatedRoute) {}
+  constructor(private router: Router, private route: ActivatedRoute, private fb: FormBuilder) {
+    this.questions = this.fb.array([]); 
+  }
 
   ngOnInit() {
+
+    this.model = this.fb.group({
+      questions: this.questions
+    });
+    
     this.items = [
       { buttonText: 'Single Choice', value: 'Single Choice' },
       { buttonText: 'Multiple Choice', value: 'Multiple Choice' },

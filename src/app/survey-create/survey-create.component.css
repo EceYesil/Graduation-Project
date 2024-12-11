@@ -8,12 +8,25 @@
 
 select#question-type option[value="open-ended"] {
     color: blue;
-  }
+}
   
-  select#question-type option[value="multiple-choice"] {
+select#question-type option[value="multiple-choice"] {
     color: blue;
-  }
+}
   
-  select#question-type option[value="single-choice"] {
+select#question-type option[value="single-choice"] {
     color: blue;
-  }
+}
+
+.publish-group {
+  display: flex;
+  align-items: center;
+}
+
+.publish-group label {
+  margin-right: 10px;
+}
+
+.form-check-input {
+  margin-top: 0;
+}
