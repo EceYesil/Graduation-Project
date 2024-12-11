@@ -66,6 +66,7 @@ export class MultipleQuestionComponent implements OnInit, AfterViewChecked {
   }
 
   scrollToLastOption(): void {
+    console.log('outer');
     if (this.optionContainers && this.optionContainers.length) {
       const lastOptionElement = this.optionContainers.last.nativeElement;
       lastOptionElement.scrollIntoView({ behavior: 'smooth', block: 'start' });

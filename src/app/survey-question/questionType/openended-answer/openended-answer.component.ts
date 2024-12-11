@@ -25,7 +25,9 @@ export class OpenEndedQuestionComponent implements OnInit, AfterViewChecked {
     });
   }
 
-  ngOnInit() {}
+  ngOnInit(): void {
+    this.scrollToTarget();
+  }
 
   ngAfterViewChecked(): void {
     if (this.needsScroll) {
@@ -45,8 +47,7 @@ export class OpenEndedQuestionComponent implements OnInit, AfterViewChecked {
   }
 
   private scrollToTarget(): void {
-    if (this.scrollTarget) {
-      this.scrollTarget.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
+    console.log('scrolling to target');
+    window.scrollTo({ top:document.body.scrollHeight, behavior: 'smooth' });  
   }
 }
