@@ -1,21 +1,13 @@
-.form-group {
-    margin-bottom: 20px; /* Adds space between questions */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
-.radio-group label {
-  margin-right: 20px; /* Adjust the value as needed */
-}
-
-select#question-type option[value="open-ended"] {
-    color: blue;
-}
-  
-select#question-type option[value="multiple-choice"] {
-    color: blue;
-}
-  
+select#question-type option[value="open-ended"],
+select#question-type option[value="multiple-choice"],
 select#question-type option[value="single-choice"] {
-    color: blue;
+  color: blue;
 }
 
 .publish-group {
@@ -29,4 +21,4 @@ select#question-type option[value="single-choice"] {
 
 .form-check-input {
   margin-top: 0;
-}
+} 

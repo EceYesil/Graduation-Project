@@ -33,7 +33,7 @@ interface Question {
     MatNativeDateModule,
     SingleAnswerQuestion,
     MultipleQuestionComponent,
-    OpenEndedQuestionComponent
+    OpenEndedQuestionComponent,
   ]
 })
 export class CreateSurveyComponent implements OnInit {

@@ -1,14 +1,41 @@
 .home-container {
   display: flex;
+  height: 100vh;
+}
+
+app-sidebar {
+  flex: 0 0 250px; /* Fixed width for sidebar */
+  transition: flex 0.3s ease;
+}
+
+app-sidebar.collapsed {
+  flex: 0 0 60px; /* Width when sidebar is collapsed */
+}
+
+app-sidebar.collapsed + .main-content .navbar {
+  left: 60px; /* Adjust left position when sidebar is collapsed */
+  width: calc(100% - 60px); /* Adjust width when sidebar is collapsed */
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
   flex-direction: column;
+  overflow-y: auto;
+  height: 100vh;
 }
 
 .navbar {
-  background-color: #333;
+  background-color: #33363b;
   color: white;
   padding: 1rem;
   display: flex;
   justify-content: flex-end; /* Align items to the right */
+  position: fixed;
+  top: 0;
+  left: 250px; /* Align below the sidebar */
+  width: calc(100% - 250px); /* Adjust width based on sidebar */
+  z-index: 1000;
 }
 
 .navbar ul {
@@ -16,6 +43,7 @@
   margin: 0;
   padding: 0;
   display: flex;
+  gap: 1rem;
 }
 
 .navbar li {
@@ -25,7 +53,7 @@
 .navbar button {
   background: none;
   border: none;
-  color: white;
+  color: #CAE4DB;
   cursor: pointer;
   font-size: 1rem;
 }
@@ -35,13 +63,28 @@
 }
 
 .breadcrumb-container {
-  padding: 1rem;
-  background-color: #f8f9fa;
+  padding: 0.5rem 1rem; /* Adjust padding to control height */
+  background-color: #e9ecef;
+  height: auto; /* Ensure height is auto */
+  display: flex;
+  align-items: center; /* Vertically center breadcrumb items */
+  white-space: nowrap; /* Prevent items from wrapping to the next line */
+  position: fixed;
+  top: 50px; /* Position below the navbar */
+  left: 250px; /* Align with the sidebar */
+  width: calc(100% - 250px); /* Adjust width based on sidebar */
+  z-index: 999; /* Ensure it is above other content */
+}
+
+app-sidebar.collapsed + .main-content .breadcrumb-container {
+  left: 60px; /* Adjust left position when sidebar is collapsed */
+  width: calc(100% - 60px); /* Adjust width when sidebar is collapsed */
 }
 
 .breadcrumb {
   display: flex;
-  align-items: center;
+  align-items: center; /* Vertically center breadcrumb items */
+  flex-wrap: nowrap; /* Ensure items do not wrap to the next line */
 }
 
 .breadcrumb a {
@@ -53,33 +96,57 @@
   margin-left: 0.5rem;
 }
 
+.news-section {
+  margin-top: 10px;
+  margin-left: 20px;
+}
+
 .news-title {
-  text-align: left;
-  margin-bottom: 10px;
-  margin-left: 10px;
+  margin-bottom: 1rem;
+}
+
+.news-section {
+  margin-top: 10px;
+  margin-left: 20px;
 }
 
 .announcement-title {
   text-align: left;
+  margin-top: 20px;
   margin-bottom: 10px;
-  margin-left: 10px;
 }
 
 .card-group {
   display: flex;
-  justify-content: space-between;
-  flex-wrap: nowrap;
-  margin-bottom: 50px;
+  gap: 1rem;
+  flex-wrap: wrap; /* Ensure cards wrap to the next line if necessary */
 }
 
 .card {
+  flex: 1 1 calc(33.333% - 1rem); /* Adjust card width for a 3-column layout */
+  padding: 1rem;
+  background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 4px;
-  padding: 20px;
-  margin: 10px;
-  box-sizing: border-box;
 }
 
 .card-body {
-  text-align: center;
+  padding: 1rem;
+}
+
+.card-title {
+  margin-bottom: 0.5rem;
+}
+
+.card-text {
+  margin-bottom: 1rem;
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column; /* Change to column for vertical layout */
+  margin-top: 70px;
+  margin-left: 20px;
+  overflow-y: auto; /* Add vertical scrolling if needed */
 }

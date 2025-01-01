@@ -1,73 +1,71 @@
 <div class="home-container">
-  <nav class="navbar">
-    <ul>
-      <li><button routerLink="/">Home</button></li>
-      <li><button routerLink="survey operations">Survey Operations</button></li>
-      <li><button routerLink="survey">Survey</button></li>
-      <li><button routerLink="register">Register</button></li>
-    </ul>
-  </nav>
-  <div class="breadcrumb-container" *ngIf="breadcrumb">
-    <nav class="breadcrumb">
-      <a routerLink="/">Home</a> / <span>{{ breadcrumb }}</span>
+  <div class="main-content">
+    <nav class="navbar">
+      <ul>
+        <li><button routerLink="/">Home</button></li>
+        <li><button routerLink="register">Register</button></li>
+        <li><button routerLink="login">Login</button></li>
+      </ul>
     </nav>
-  </div>
-  <div class="content">
-    <div *ngIf="showWelcomeMessage">
-      <h5>Welcome to the Survey Application</h5>
-      <p>Select an option from the sidebar to get started.</p>
+    <div class="breadcrumb-container" *ngIf="breadcrumb">
+      <nav class="breadcrumb">
+        <a routerLink="/">Home</a> / <span>{{ breadcrumb }}</span>
+      </nav>
     </div>
-    <router-outlet></router-outlet>
-  </div>
-
-  <!-- News and Announcement Cards -->
-  <div *ngIf="isHomePage" style="margin-top: 100px;">
-    <div class="news-title">
-      <h4>News</h4>
+    <div class="content">
+      <div *ngIf="showWelcomeMessage">
+        <h4>Welcome to the Survey Application</h4>
+      </div>
+      <router-outlet></router-outlet>
     </div>
-    
-    <div class="card-group">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">News Card 1</h5>
-          <p class="card-text">This is the content of news card 1.</p>
+    <!-- News and Announcement Cards -->
+    <div *ngIf="isHomePage" class="news-section">
+      <div class="news-title">
+        <h4>News</h4>
+      </div>
+      <div class="card-group">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">News Card 1</h5>
+            <p class="card-text">This is the content of news card 1.</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">News Card 2</h5>
+            <p class="card-text">This is the content of news card 2.</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">News Card 3</h5>
+            <p class="card-text">This is the content of news card 3.</p>
+          </div>
         </div>
       </div>
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">News Card 2</h5>
-          <p class="card-text">This is the content of news card 2.</p>
+      <div class="announcement-section">
+        <div class="announcement-title">
+          <h4>Announcement</h4>
         </div>
-      </div>
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">News Card 3</h5>
-          <p class="card-text">This is the content of news card 3.</p>
-        </div>
-      </div>
-    </div>
-
-    <div *ngIf="isHomePage">
-      <div class="announcement-title">
-        <h4>Announcement</h4>
-      </div>
-    <div class="card-group">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Announcement Card 1</h5>
-          <p class="card-text">This is the content of announcement card 1.</p>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Announcement Card 2</h5>
-          <p class="card-text">This is the content of announcement card 2.</p>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Announcement Card 3</h5>
-          <p class="card-text">This is the content of announcement card 3.</p>
+        <div class="card-group">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Announcement Card 1</h5>
+              <p class="card-text">This is the content of announcement card 1.</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Announcement Card 2</h5>
+              <p class="card-text">This is the content of announcement card 2.</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Announcement Card 3</h5>
+              <p class="card-text">This is the content of announcement card 3.</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>

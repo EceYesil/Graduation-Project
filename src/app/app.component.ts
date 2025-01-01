@@ -1,14 +1,41 @@
-import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
-import { routes } from './app.routes';
+import { Component, HostListener, OnInit, signal } from '@angular/core';
+import { SidebarComponent } from './custom-build/sidebar/sidebar.component';
+import { MainComponent } from './main/main.component';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
   standalone: true,
-  imports: [RouterModule]
+  imports: [SidebarComponent, MainComponent],
+  templateUrl: './app.component.html',
+  styleUrl: './app.component.css',
 })
-export class AppComponent {
-  title = 'survey-app';
+export class AppComponent implements OnInit {
+  isSidebarCollapsed = signal<boolean>(false);
+  screenWidth = signal<number>(0);
+
+  constructor() {
+    if (typeof window !== 'undefined') {
+      this.screenWidth.set(window.innerWidth);
+    }
+  }
+
+  @HostListener('window:resize')
+  onResize() {
+    if (typeof window !== 'undefined') {
+      this.screenWidth.set(window.innerWidth);
+      if (this.screenWidth() < 768) {
+        this.isSidebarCollapsed.set(true);
+      }
+    }
+  }
+
+  ngOnInit(): void {
+    if (typeof window !== 'undefined') {
+      this.isSidebarCollapsed.set(this.screenWidth() < 768);
+    }
+  }
+
+  changeIsSidebarCollapsed(isSidebarCollapsed: boolean): void {
+    this.isSidebarCollapsed.set(isSidebarCollapsed);
+  }
 }
