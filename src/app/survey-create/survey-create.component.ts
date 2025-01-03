@@ -10,6 +10,7 @@ import { SingleAnswerQuestion} from "../survey-question/questionType/single-answ
 import { MultipleQuestionComponent } from  "../survey-question/questionType/multiple-answer/multiple-answer.component"; 
 import { OpenEndedQuestionComponent } from "../survey-question/questionType/openended-answer/openended-answer.component";
 import { NgForm } from '@angular/forms';
+import { NavbarComponent } from "../custom-build/navbar/navbar.component";
 
 interface Question {
   type: string;
@@ -34,7 +35,8 @@ interface Question {
     SingleAnswerQuestion,
     MultipleQuestionComponent,
     OpenEndedQuestionComponent,
-  ]
+    NavbarComponent
+]
 })
 export class CreateSurveyComponent implements OnInit {
   @Input() edit = false;

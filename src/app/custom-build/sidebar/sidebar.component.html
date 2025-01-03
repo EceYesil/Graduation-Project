@@ -3,15 +3,15 @@
   [ngClass]="isSidebarCollapsed ? 'sidenav-collapsed' : ''"
 >
   <div class="logo-container">
-    <!--<button class="logo" (click)="toggleCollapse()">
+    <button class="logo" (click)="toggleCollapse()">
       <i class="fal fa-bars"></i>
-    </button> --->  
-    <div *ngIf="!isSidebarCollapsed">
+    </button>
+    @if (!isSidebarCollapsed) {
       <div class="logo-text">Survey</div>
       <button class="btn-close" (click)="closeSidenav()">
         <i class="fal fa-times close-icon"></i>
       </button>
-    </div>
+    }
   </div>
   <div class="sidenav-nav">
     @for (item of items; track $index) {
@@ -22,6 +22,7 @@
           routerLinkActive="active"
           [routerLinkActiveOptions]="{ exact: true }"
         >
+        <!--If sidebar collapsed then cancel the icon labels-->
           <i class="sidenav-link-icon" [class]="item.icon"></i>
           @if (!isSidebarCollapsed) {
             <span class="sidenav-link-text">{{ item.label }}</span>

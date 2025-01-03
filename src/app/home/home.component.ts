@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { RouterModule, Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { NavbarComponent } from "../custom-build/navbar/navbar.component";
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [RouterModule,CommonModule],
+  imports: [RouterModule, CommonModule, NavbarComponent],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })

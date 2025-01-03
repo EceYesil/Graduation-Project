@@ -3,63 +3,12 @@
   height: 100vh;
 }
 
-app-sidebar {
-  flex: 0 0 250px; /* Fixed width for sidebar */
-  transition: flex 0.3s ease;
-}
-
-app-sidebar.collapsed {
-  flex: 0 0 60px; /* Width when sidebar is collapsed */
-}
-
-app-sidebar.collapsed + .main-content .navbar {
-  left: 60px; /* Adjust left position when sidebar is collapsed */
-  width: calc(100% - 60px); /* Adjust width when sidebar is collapsed */
-}
-
 .main-content {
   flex: 1;
   display: flex;
   flex-direction: column;
   overflow-y: auto;
   height: 100vh;
-}
-
-.navbar {
-  background-color: #33363b;
-  color: white;
-  padding: 1rem;
-  display: flex;
-  justify-content: flex-end; /* Align items to the right */
-  position: fixed;
-  top: 0;
-  left: 250px; /* Align below the sidebar */
-  width: calc(100% - 250px); /* Adjust width based on sidebar */
-  z-index: 1000;
-}
-
-.navbar ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  gap: 1rem;
-}
-
-.navbar li {
-  margin-left: 1rem; /* Add space between buttons */
-}
-
-.navbar button {
-  background: none;
-  border: none;
-  color: #CAE4DB;
-  cursor: pointer;
-  font-size: 1rem;
-}
-
-.navbar button:hover {
-  text-decoration: underline;
 }
 
 .breadcrumb-container {
@@ -74,11 +23,6 @@ app-sidebar.collapsed + .main-content .navbar {
   left: 250px; /* Align with the sidebar */
   width: calc(100% - 250px); /* Adjust width based on sidebar */
   z-index: 999; /* Ensure it is above other content */
-}
-
-app-sidebar.collapsed + .main-content .breadcrumb-container {
-  left: 60px; /* Adjust left position when sidebar is collapsed */
-  width: calc(100% - 60px); /* Adjust width when sidebar is collapsed */
 }
 
 .breadcrumb {
