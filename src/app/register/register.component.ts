@@ -20,8 +20,8 @@ export class RegisterComponent {
     constructor(private fb: FormBuilder) {
       // Define form fields and validation rules
       this.registerForm = this.fb.group({
-        username: ['', Validators.required],  // Username field must not be empty
         email: ['', [Validators.required, Validators.email]],  // Must be a valid email
+        a: ['', Validators.required],  // Username field must not be empty
         password: ['', Validators.required],  // Password field must not be empty
       });
     }
@@ -29,18 +29,18 @@ export class RegisterComponent {
     // When the user submits the form
     onSubmit() {
       if (this.registerForm.valid) {
-        const formData = this.registerForm.value;  // Collect the form data
+        const formData = {
+          email: this.registerForm.get('email')?.value,
+          a: this.registerForm.get('a')?.value,
+          password: this.registerForm.get('password')?.value,
+        };
+    
         const existingProfiles = JSON.parse(localStorage.getItem('profiles') || '[]');
-        existingProfiles.push(formData);  // Add new profile to the list
-        localStorage.setItem('profiles', JSON.stringify(existingProfiles));  // Save the list in localStorage
-  
-        alert('Registration successful!');  // Show a success message
-        this.registerForm.reset();  // Clear the form after submission
+        existingProfiles.push(formData);
+        localStorage.setItem('profiles', JSON.stringify(existingProfiles));
+    
+        alert('Registration successful!');
+        this.registerForm.reset();
       }
-    }
-  
-    // View all saved profiles
-    viewProfiles() {
-      this.savedProfiles = JSON.parse(localStorage.getItem('profiles') || '[]');  // Load from localStorage
     }
 }

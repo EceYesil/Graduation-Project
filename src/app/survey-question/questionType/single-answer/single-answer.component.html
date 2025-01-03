@@ -21,15 +21,14 @@
         <div formArrayName="options">
           <div 
             *ngFor="let option of options.controls; let i = index" 
-            [formGroupName]="i" 
-            class="form-group" 
-            #optionContainer style="margin: 10px 10px 0 0;">
+            [formGroupName]="i" >
             <div class="form-check">
               <input 
-                type="checkbox" 
+                type="radio" 
                 class="form-check-input" 
                 formControlName="selected" 
                 id="optionSelected-{{i}}" 
+                name="singleAnswerOptions"
               />
               <label class="form-check-label" for="optionSelected-{{i}}">
                 <input 
