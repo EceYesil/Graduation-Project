@@ -1,6 +1,6 @@
 <form [formGroup]="questionForm" (ngSubmit)="onSubmit()">
   <div class="form-row">
-    <div class="form-group col-md-12">
+    <div class="form-group col-md-12" style="margin: 10px;">
       <!-- Question Input -->
       <div class="form-group">
         <label for="questionText">Question:</label>
@@ -48,7 +48,7 @@
       <button 
         type="button" 
         class="btn btn-danger" 
-        (click)="deleteQuestion()" style="margin-right: 10px;">
+        (click)="deleteQuestion()" style="margin: 10px ;">
         Delete Question
       </button>
       <button 

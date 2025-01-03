@@ -4,13 +4,6 @@ html, body {
   padding: 0;
 }
 
-.main-container {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    overflow-y: auto;
-    height: 100vh;
-}
 
 select#question-type option[value="open-ended"],
 select#question-type option[value="multiple-choice"],
@@ -30,3 +23,4 @@ select#question-type option[value="single-choice"] {
 .form-check-input {
   margin-top: 0;
 } 
+
