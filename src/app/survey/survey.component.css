@@ -1,6 +1,7 @@
-.survey-container {
-    background-color: #f9f9f9;
+  .survey-container {
+    margin-top: 40px;
     border-radius: 5px;
+    display: grid;
   }
   
   .survey-question {

@@ -4,12 +4,14 @@ import { CreateSurveyComponent  } from './survey-create/survey-create.component'
 import { HomeComponent } from './home/home.component';
 import { SurveyComponent } from './survey/survey.component';
 import { RegisterComponent } from './register/register.component';
+import { LoginComponent } from './login/login.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent}, 
   { path: 'survey', component: SurveyComponent },
   { path: 'survey operations', component: CreateSurveyComponent },
   { path: 'register', component: RegisterComponent },
+  { path: 'login', component: LoginComponent }, 
 ];
 
 @NgModule({

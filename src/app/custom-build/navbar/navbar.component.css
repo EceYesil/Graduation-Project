@@ -1,0 +1,36 @@
+.navbar {
+  background-color: #33363b;
+  color: white;
+  padding: 1rem;
+  display: flex;
+  justify-content: flex-end; /* Align items to the right */
+  position: fixed;
+  top: 0;
+  left: 0; /* Align below the sidebar */
+  width: 100%; /* Adjust width based on sidebar */
+  z-index: 1000;
+}
+
+.navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 1rem;
+}
+
+.navbar li {
+  margin-left: 1rem; /* Add space between buttons */
+}
+
+.navbar button {
+  background: none;
+  border: none;
+  color: #CAE4DB;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.navbar button:hover {
+  text-decoration: underline;
+}

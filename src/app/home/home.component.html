@@ -1,12 +1,6 @@
 <div class="home-container">
   <div class="main-content">
-    <nav class="navbar">
-      <ul>
-        <li><button routerLink="/">Home</button></li>
-        <li><button routerLink="register">Register</button></li>
-        <li><button routerLink="login">Login</button></li>
-      </ul>
-    </nav>
+    <app-navbar></app-navbar>
     <div class="breadcrumb-container" *ngIf="breadcrumb">
       <nav class="breadcrumb">
         <a routerLink="/">Home</a> / <span>{{ breadcrumb }}</span>

@@ -1,11 +1,14 @@
 import { Component, HostListener, OnInit, signal } from '@angular/core';
 import { SidebarComponent } from './custom-build/sidebar/sidebar.component';
 import { MainComponent } from './main/main.component';
+import { RouterModule } from '@angular/router';
+import { NavbarComponent } from './custom-build/navbar/navbar.component';
+
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [SidebarComponent, MainComponent],
+  imports: [SidebarComponent, MainComponent,RouterModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
