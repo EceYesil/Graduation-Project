@@ -2,8 +2,8 @@
   <!-- Question Input -->
   <div class="form-row">
     <div class="form-group col-md-12">
-      <div class="form-group">
-        <label for="questionText">Question:</label>
+      <div class="form-group" style="margin-top: 40px;">
+        <label for="questionText"  style="margin-bottom: 10px;" >Question:</label>
         <input 
           type="text" 
           id="questionText" 
@@ -16,8 +16,8 @@
 
 
       <div class="form-row">
-        <div class="form-group col-md-12">
-          <label for="answer">Answer:</label>
+        <div class="form-group col-md-12" style="margin-top: 20px;">
+          <label for="answer"  style="margin-bottom: 10px;">Answer:</label>
           <textarea 
             formControlName="answer"
             class="form-control"
@@ -34,12 +34,14 @@
           <button 
             type="button" 
             class="btn btn-danger" 
-            (click)="deleteQuestion()" style="margin-right: 10px;">
+            (click)="deleteQuestion()" 
+            style="margin: 10px 10px 0 0;">
             Delete Question
-          </button>
+          </button >
           <button 
             type="submit" 
-            class="btn btn-success">
+            class="btn btn-success" 
+            style="margin: 10px 10px 0 0;">
             Save
           </button>
         </div>  
