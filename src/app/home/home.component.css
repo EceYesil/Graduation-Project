@@ -3,13 +3,6 @@
   height: 100vh;
 }
 
-.main-content {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  overflow-y: auto;
-  height: 100vh;
-}
 
 .breadcrumb-container {
   padding: 0.5rem 1rem; /* Adjust padding to control height */
